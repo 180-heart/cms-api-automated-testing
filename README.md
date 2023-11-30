@@ -1,2 +1,2 @@
 # cms-api-automated-testing
-Read me to be main soon.
+Read me to be made soon.
