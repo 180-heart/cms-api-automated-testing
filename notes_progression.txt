@@ -1,0 +1,41 @@
+api endpoints
+
+TODO: Use commands in regular tests
+TODO: Create GIT and give access to Techno Workers
+
+
+category: Completed
+
+exerciseperiod:Completed
+
+exercisezone: Completed
+
+messaging: Completed
+
+programexerciseperioddaymapping: Completed (28/11/2023)
+
+program: Completed (22/11/2023)
+
+programmessaging: Completed (28/11/2023)
+
+question: Completed (29/11/2023)
+
+questiontype: Completed (22/11/2023)
+
+usercohortsmapping: Completed (removed from swagger docs)
+
+usercohorts: Completed (11/11/2023)
+
+userquestionanswers:
+Working, but need to isolate the test, so that it doesn't rely on anything thats fixed or needs to be in the API prior to the test. 
+
+need to create a question before all and delete it after all
+
+users: Completed (23/11/2023)
+
+NOTES:
+
+put this for each response 
+
+// Print the retrieved data to the console
+cy.log(JSON.stringify(response_body, null, 2));
