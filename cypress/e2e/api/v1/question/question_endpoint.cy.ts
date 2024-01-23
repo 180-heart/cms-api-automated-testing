@@ -69,6 +69,7 @@ describe("GET Request to /api/v1/question", () => {
         "description": "question_test_description",
         "questioncategoryid": 2,
         "questiontypeid": question_type_id,
+        "priority": 10,
         "userid": 1
       },
     }).then((response) => {
@@ -89,7 +90,8 @@ describe("GET Request to /api/v1/question", () => {
       expect(response_body).to.have.property('isactive');
       expect(response_body).to.have.property('questioncategoryid');
       expect(response_body).to.have.property('questiontypeid');
-      expect(response_body).to.have.property('identifier');
+      expect(response_body).to.have.property('priority');
+
 
       // Add specific assertions for the data values if needed
       expect(response_body.isactive).to.be.true;
@@ -98,6 +100,8 @@ describe("GET Request to /api/v1/question", () => {
       expect(response_body.description).to.equal('question_test_description');
       expect(response_body.questioncategoryid).to.equal(2);
       expect(response_body.questiontypeid).to.equal(question_type_id);
+      expect(response_body.priority).to.equal(10);
+      
 
       // Print the retrieved data to the console
       cy.log(JSON.stringify(response_body, null, 2));
@@ -149,6 +153,7 @@ describe("GET Request to /api/v1/question", () => {
       expect(response_body).to.have.property('identifier');
       expect(response_body).to.have.property('category');
       expect(response_body).to.have.property('questiontypename');
+      expect(response_body).to.have.property('priority');
 
       // Add specific assertions for the data values if needed
       expect(response_body.isactive).to.be.true;
@@ -156,6 +161,7 @@ describe("GET Request to /api/v1/question", () => {
       expect(response_body.description).to.equal('question_test_description');
       expect(response_body.questioncategoryid).to.equal(2);
       expect(response_body.questiontypeid).to.equal(question_type_id);
+      expect(response_body.priority).to.equal(10);
       expect(response_body.identifier).to.equal(`${identifier}`);
 
     });
@@ -197,7 +203,9 @@ describe("GET Request to /api/v1/question", () => {
       expect(response_body).to.have.property('isactive');
       expect(response_body).to.have.property('questioncategoryid');
       expect(response_body).to.have.property('questiontypeid');
+      expect(response_body).to.have.property('priority');
       expect(response_body).to.have.property('identifier');
+      
   
       // Add specific assertions for the data values if needed
       expect(response_body.isactive).to.be.true;
@@ -205,6 +213,7 @@ describe("GET Request to /api/v1/question", () => {
       expect(response_body.questiontypeid).to.equal(question_type_id);
       expect(response_body.name).to.equal("post_request_question_test");
       expect(response_body.createdby).to.equal(1);
+      expect(response_body.priority).to.equal(10);
     });
   }); 
 
@@ -245,12 +254,14 @@ describe("GET Request to /api/v1/question", () => {
       expect(response_body).to.have.property('questioncategoryid');
       expect(response_body).to.have.property('questiontypeid');
       expect(response_body).to.have.property('identifier');
+      expect(response_body).to.have.property('priority');
   
       // Add specific assertions for the data values if needed
       expect(response_body.isactive).to.be.true;
       expect(response_body.questioncategoryid).to.equal(2);
       expect(response_body.questiontypeid).to.equal(question_type_id);
       expect(response_body.name).to.equal("post_request_question_test");
+      expect(response_body.priority).to.equal(10);
       expect(response_body.createdby).to.equal(1);
     });
   });
@@ -278,6 +289,7 @@ describe("GET Request to /api/v1/question", () => {
         description: "question_test_description",
         questioncategoryid: 2,
         questiontypeid: 2,
+        priority: 5,
         userid: 1,
       },
     }).then((response) => {
