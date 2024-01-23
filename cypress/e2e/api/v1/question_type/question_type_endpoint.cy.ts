@@ -63,9 +63,11 @@ describe("Requests to /api/v1/question", () => {
         typename: "questiontype_post",
         description: "this is a test question",
         userid: 1,
-        answertype: "Textbox",
+        answertype: "SlidingScale",
         answerhrimpact: "Not Impacted",
-        dropdownoptions: ""
+        dropdownoptions: "",
+        slidingScaleMin: 1,
+        slidingScaleMax: 5
     },
     }).then((response) => {
     // Assert the response status code
@@ -91,14 +93,18 @@ describe("Requests to /api/v1/question", () => {
     expect(response_body).to.have.property('answerhrimpact');
     expect(response_body).to.have.property('dropdownoptions');
     expect(response_body).to.have.property('identifier');
+    expect(response_body).to.have.property('slidingscalemin');
+    expect(response_body).to.have.property('slidingscalemax');
 
     // Add specific assertions for the data values if needed
     expect(response_body.isactive).to.be.true;
     expect(response_body.typename).to.equal("questiontype_post");
     expect(response_body.description).to.equal("this is a test question");
     expect(response_body.createdby).to.equal(1);
-    expect(response_body.answertype).to.equal("Textbox");
+    expect(response_body.answertype).to.equal("SlidingScale");
     expect(response_body.answerhrimpact).to.equal("Not Impacted");
+    expect(response_body.slidingscalemin).to.equal(1);
+    expect(response_body.slidingscalemax).to.equal(5);
 
     // Extract and save the identifier to a variable
     const identifier = response_body.identifier;
@@ -153,9 +159,11 @@ describe("Requests to /api/v1/question", () => {
     expect(response_body.typename).to.equal("questiontype_post");
     expect(response_body.description).to.equal("this is a test question");
     expect(response_body.createdby).to.equal(1);
-    expect(response_body.answertype).to.equal("Textbox");
+    expect(response_body.answertype).to.equal("SlidingScale");
     expect(response_body.answerhrimpact).to.equal("Not Impacted");
     expect(response_body.identifier).to.equal(identifier);
+    expect(response_body.slidingscalemin).to.equal(1);
+    expect(response_body.slidingscalemax).to.equal(5);
     });
   });
     
@@ -181,7 +189,9 @@ describe("Requests to /api/v1/question", () => {
         userid: 1,
         answertype: "Textbox",
         answerhrimpact: "Not Impacted",
-        dropdownoptions: ""
+        dropdownoptions: "",
+        slidingScaleMin: "",
+        slidingScaleMax: ""
       },
     }).then((response) => {
       // Assert the response status code
